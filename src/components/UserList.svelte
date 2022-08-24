@@ -22,9 +22,9 @@ import UserLigne from './UserLigne.svelte';
 	</thead>
 	<tbody>
     {#if users.length === 0}
-  <Spinner/>
     
-  {/if}
+    <Spinner/>
+    {/if}
 		{#each users as user (user.id)}
 		
 			<UserLigne item={user}/>

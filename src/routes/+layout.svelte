@@ -1,6 +1,6 @@
 <script lang="ts">
   import spiner from '../assets/spinner.gif'
-	import storeData from '../store/store';
+
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 	import SearchBar from '../components/SearchBar.svelte';
@@ -30,10 +30,7 @@
 	}
 	fetchUsers();
 
-	// Test store
-	storeData.subscribe((valeur) => {
-		txt = valeur;
-	});
+
 </script>
 
 <Header />
