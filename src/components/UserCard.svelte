@@ -1,10 +1,14 @@
 <script lang="ts">
-    
-	export /**
+    	export /**
 	 * @type {{  firstName: string; lastName: string; id: number;  }}
 	 */ let item:any
 
-     
+     let toggle = false
+
+function toggleClass() {
+    toggle = !toggle
+}
+
 	/**
 	 * formate name
 	 *
@@ -20,12 +24,16 @@
 		return formatName;
 	}
 </script>
-<div class="modal is-active p-5 ">
-    <div class="modal-background" />
+
+<button on:click ={toggleClass} class="button is-white is-small"><i class="fa-solid fa-ellipsis" /></button>
+
+
+<div class="modal p-5 {toggle ? 'is-active' : ' '} ">
+    <div on:click ={toggleClass} class="modal-background"/>
 	<div class="modal-card">
 		<header class="modal-card-head">
 		
-			<button class="delete" aria-label="close" />
+			<button on:click ={toggleClass} class="delete" aria-label="close" />
 		</header>
 		<section class="modal-card-body">
 			<!-- Content ... -->

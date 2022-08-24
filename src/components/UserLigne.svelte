@@ -1,6 +1,7 @@
 <script lang="ts">
 import UserCard from "./UserCard.svelte";
 
+
 	export /**
 	 * @type {{  firstName: string; lastName: string; id: number;  }}
 	 */ let item:any;
@@ -9,11 +10,7 @@ import UserCard from "./UserCard.svelte";
 	 *
 	 * @returns bool
 	 */
-     let toggleModal = false;
-	const toggle = () => {
-		toggleModal = !toggleModal;
-	
-	};
+ 
 
      
 	/**
@@ -38,10 +35,7 @@ import UserCard from "./UserCard.svelte";
 	<td>{formateName(item.firstName , item.lastName)}</td>
 	<td>{item.phone}</td>
 	<td>
-		<button on:click={toggle} class="button is-white is-small"><i class="fa-solid fa-ellipsis" /></button>
+		<UserCard {item}/>
 	</td>
-    {#if toggleModal}
-        
-    <UserCard {item}/>
-    {/if}
+
 </tr>
