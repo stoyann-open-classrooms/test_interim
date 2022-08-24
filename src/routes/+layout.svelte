@@ -1,4 +1,5 @@
 <script lang="ts">
+  import spiner from '../assets/spinner.gif'
 	import storeData from '../store/store';
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
@@ -37,7 +38,11 @@
 
 <Header />
 <main class="container p-5">
-	<SearchBar on:recherche-user={goRecherche} />
+  <SearchBar on:recherche-user={goRecherche} />
+  {#if !users}
+  <img src={spiner} alt="loader">
+    
+  {/if}
 	<UserList {users} />
 </main>
 <Footer />

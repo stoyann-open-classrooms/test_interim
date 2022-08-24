@@ -1,4 +1,6 @@
 <script lang="ts">
+  import spiner from '../assets/spinner.gif'
+import Spinner from './Spinner.svelte';
 
 import UserLigne from './UserLigne.svelte';
 	export let users: any[] = [];
@@ -19,6 +21,10 @@ import UserLigne from './UserLigne.svelte';
 		</tr>
 	</thead>
 	<tbody>
+    {#if users.length === 0}
+  <Spinner/>
+    
+  {/if}
 		{#each users as user (user.id)}
 		
 			<UserLigne item={user}/>
