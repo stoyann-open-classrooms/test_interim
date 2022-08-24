@@ -8,29 +8,31 @@
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
-
-
-header{
-    background-color: $primary;
-    color: $light;
-    .navbar-brand {
-        background-color: $primary;
-        a{
-            color: $dark;
-        }
-    }
-    .navbar-burger{
-        color: $dark;
-        
-    }
+header {
+	background-color: $primary;
+	color: $light;
+	.navbar-brand {
+		background-color: $primary;
+		a {
+			color: $dark;
+		}
+	}
+	.navbar-burger {
+		color: $dark;
+	}
 }
 
 .footer {
-    background-color: $dark-color;
-   
+	background-color: $dark-color;
 
-  strong {
+	strong {
+		color: white;
+	}
+}
 
-      color: white;
-  }
-    }
+
+td {
+ img{
+    height: 50px;
+ }
+}
