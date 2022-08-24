@@ -8,6 +8,10 @@
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
+
+main {
+min-height: 90vh;
+}
 header {
 	background-color: $primary;
 	color: $light;
@@ -36,3 +40,13 @@ td {
     height: 50px;
  }
 }
+
+.top {
+    display: flex;
+    align-items: center;
+    img{
+        height: 150px;
+
+    }
+}
+
