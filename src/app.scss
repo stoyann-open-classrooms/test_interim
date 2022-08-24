@@ -13,24 +13,24 @@ main {
 min-height: 90vh;
 }
 header {
-	background-color: $primary;
+	background-color: $secondary-color;
 	color: $light;
 	.navbar-brand {
-		background-color: $primary;
+		background-color: $secondary-color;
 		a {
 			color: $dark;
 		}
 	}
 	.navbar-burger {
-		color: $dark;
+		color: $light-color;
 	}
 }
 
 .footer {
-	background-color: $dark-color;
-
+    background-color: $secondary-color;
+    
 	strong {
-		color: white;
+        color: $light-color;
 	}
 }
 
@@ -51,7 +51,6 @@ td {
 }
 
 
-
 .spinner-container{
     position: absolute;
     top: -50px;
@@ -61,6 +60,7 @@ td {
     background-color: rgba(99, 99, 99, 0.418);
     img {
         position: absolute;
+        height: 5rem;
         top: 50%;
         left: 50%;
         top: 50%;

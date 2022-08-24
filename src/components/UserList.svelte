@@ -1,5 +1,4 @@
 <script lang="ts">
-  import spiner from '../assets/spinner.gif'
 import Spinner from './Spinner.svelte';
 
 import UserLigne from './UserLigne.svelte';
@@ -15,7 +14,7 @@ import UserLigne from './UserLigne.svelte';
 	<thead>
 		<tr>
 			<th />
-			<th>nom</th>
+			<th>Nom</th>
 			<th>Télèphone</th>
 			<th>Action</th>
 		</tr>

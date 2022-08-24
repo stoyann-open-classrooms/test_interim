@@ -8,6 +8,9 @@
 	import '../app.scss';
 	let txt: string;
 	let users: any[] | undefined = [];
+	
+	
+	
 	function fetchUsers() {
 		fetch('https://dummyjson.com/users?limit=100')
 			.then((response) => response.json())
