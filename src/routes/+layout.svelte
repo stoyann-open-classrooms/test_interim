@@ -81,7 +81,6 @@
 </script>
 
 <Header />
-<slot />
 <main class="container p-5">
 	<SearchBar />
 	<UserList {users}/>
