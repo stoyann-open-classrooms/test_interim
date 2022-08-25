@@ -37,6 +37,21 @@
 			<button on:click={toggleClass} class="delete" aria-label="close" />
 		</header>
 		<section class="modal-card-body">
+			<div class="notification is-warning">
+				<button class="delete" />
+
+				<p>
+					Vous êtes sur le point de supprimer l'utilisateur <strong>
+						{formateName(item.firstName, item.lastName)}.
+					</strong>
+					Cette action est irréversible, êtes-vous certain de vouloir continuer ?
+				</p>
+        <div class="mt-3">
+
+          <button class="button is-danger is-small mr-3">Supprimer</button>
+          <button class="button is-success is-small">Annuler</button>
+        </div>
+			</div>
 			<!-- Content ... -->
 			<div class="top">
 				<figure class="image is-110x110">
@@ -78,9 +93,9 @@
 				</div>
 			</div>
 		</section>
-    <footer class="modal-card-foot">
-      <button class="button is-success"> <i class=" mr-2 fa-solid fa-pen"></i>Modifier</button>
-      <button class="button is-danger"><i class=" mr-2 fa-solid fa-trash"></i> Supprimer</button>
-    </footer>
+		<footer class="modal-card-foot">
+			<button class="button is-success"> <i class=" mr-2 fa-solid fa-pen" />Modifier</button>
+			<button class="button is-danger"><i class=" mr-2 fa-solid fa-trash" /> Supprimer</button>
+		</footer>
 	</div>
 </div>
