@@ -17,6 +17,39 @@
           </button>
         </div>
 
-       
+        <div class="navbar-menu  ">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    <i class=" mr-2 fa-solid fa-magnifying-glass"></i>Recherche
+                </a>
+
+                <a class="navbar-item" href="/">
+                    <i  class=" mr-2 fa fa-plus"></i>  Ajouter un uttilisateur
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="/">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/">
+                            <i class=" mr-2 fa fa-book"></i> Documentation
+                        </a>
+        
+                        <a class="navbar-item" href="/">
+                            <i class=" mr-2 fa-solid fa-comment-dots"></i> A propos
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="/">
+                            <i class=" mr-2 fa  fa-bug"></i>  Signaler un problème
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+          
+        </div>
     </nav>
 </header>
