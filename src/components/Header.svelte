@@ -23,25 +23,25 @@
                     <i class=" mr-2 fa-solid fa-magnifying-glass"></i>Recherche
                 </a>
 
-                <a class="navbar-item" href="/">
+                <a class="navbar-item" href="/add-user">
                     <i  class=" mr-2 fa fa-plus"></i>  Ajouter un uttilisateur
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/">
+                    <a class="navbar-link" href="/help">
                         Aide
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/">
+                        <a class="navbar-item" href="/documentation">
                             <i class=" mr-2 fa fa-book"></i> Documentation
                         </a>
         
-                        <a class="navbar-item" href="/">
+                        <a class="navbar-item" href="/about" >
                             <i class=" mr-2 fa-solid fa-comment-dots"></i> A propos
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item" href="/">
+                        <a class="navbar-item" href="/bug-report">
                             <i class=" mr-2 fa  fa-bug"></i>  Signaler un problème
                         </a>
                     </div>

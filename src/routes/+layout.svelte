@@ -38,6 +38,7 @@
 
 <Header />
 <main class="container p-5">
+	
   <SearchBar on:recherche-user={goRecherche} />
   {#if !users}
   <img src={spiner} alt="loader">

@@ -37,8 +37,9 @@
 <div class="modal p-5 {toggle ? 'is-active' : ' '} ">
 	<div on:click={toggleClass} class="modal-background" />
 	<div class="modal-card">
+    <button on:click={toggleClass} class="delete" aria-label="close" />
 		<header class="modal-card-head">
-			<button on:click={toggleClass} class="delete" aria-label="close" />
+      <h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
 		</header>
 		<section class="modal-card-body">
       {#if warning}
@@ -62,7 +63,6 @@
 					<img src={item.image} alt="" />
 				</figure>
 				<div class="contact ">
-					<h3 class="title is-2">{formateName(item.firstName, item.lastName)}</h3>
 					<p class="title is-5 m-2"><i class=" mr-4 fa-solid fa-phone" /> {item.phone}</p>
 					<p class="title is-5"><i class=" mr-4 fa-solid fa-envelope" /> {item.email}</p>
 				</div>

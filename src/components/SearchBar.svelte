@@ -25,6 +25,7 @@
 				if ( error === 4) {
 
 					toggle = true;
+					dispatch('recherche-user', { txt: "zldslj" });
 					message = "Une erreur est survenue, merci de réessayer.";
 					error = 0
 				} else {
