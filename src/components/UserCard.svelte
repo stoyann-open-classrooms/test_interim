@@ -78,6 +78,9 @@
 				</div>
 			</div>
 		</section>
-		<footer class="modal-card-foot" />
+    <footer class="modal-card-foot">
+      <button class="button is-success"> <i class=" mr-2 fa-solid fa-pen"></i>Modifier</button>
+      <button class="button is-danger"><i class=" mr-2 fa-solid fa-trash"></i> Supprimer</button>
+    </footer>
 	</div>
 </div>
