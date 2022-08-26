@@ -1,13 +1,8 @@
 <script lang="ts">
-import Spinner from './Spinner.svelte';
+	import Spinner from './Spinner.svelte';
 
-import UserLigne from './UserLigne.svelte';
+	import UserLigne from './UserLigne.svelte';
 	export let users: any[] = [];
-
-	
-
-
-
 </script>
 
 <table class="table is-bordered is-fullwidth mb-4 mt-5">
@@ -20,13 +15,11 @@ import UserLigne from './UserLigne.svelte';
 		</tr>
 	</thead>
 	<tbody>
-    {#if users.length === 0}
-    
-    <Spinner/>
-    {/if}
+		{#if users.length === 0}
+			<Spinner />
+		{/if}
 		{#each users as user (user.id)}
-		
-			<UserLigne item={user}/>
+			<UserLigne item={user} />
 		{/each}
 	</tbody>
 </table>

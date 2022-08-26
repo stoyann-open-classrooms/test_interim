@@ -37,26 +37,26 @@
 <div class="modal p-5 {toggle ? 'is-active' : ' '} ">
 	<div on:click={toggleClass} class="modal-background" />
 	<div class="modal-card">
-    <button on:click={toggleClass} class="delete" aria-label="close" />
+		<button on:click={toggleClass} class="delete" aria-label="close" />
 		<header class="modal-card-head">
-      <h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
+			<h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
 		</header>
 		<section class="modal-card-body">
-      {#if warning}
-      <div class="notification is-warning">
-				<p>
-					Vous êtes sur le point de supprimer l'utilisateur <strong>
-						{formateName(item.firstName, item.lastName)}.
-					</strong>
-					Cette action est irréversible, êtes-vous certain de vouloir continuer ?
-				</p>
-				<div class="mt-3">
-					<button class="button is-danger is-small mr-3">Supprimer</button>
-					<button on:click={toggleWarning} class="button is-success is-small">Annuler</button>
+			{#if warning}
+				<div class="notification is-warning">
+					<p>
+						Vous êtes sur le point de supprimer l'utilisateur <strong>
+							{formateName(item.firstName, item.lastName)}.
+						</strong>
+						Cette action est irréversible, êtes-vous certain de vouloir continuer ?
+					</p>
+					<div class="mt-3">
+						<button class="button is-danger is-small mr-3">Supprimer</button>
+						<button on:click={toggleWarning} class="button is-success is-small">Annuler</button>
+					</div>
 				</div>
-			</div>
-      {/if}
-		
+			{/if}
+
 			<!-- Content ... -->
 			<div class="top">
 				<figure class="image is-110x110">
@@ -99,7 +99,9 @@
 		</section>
 		<footer class="modal-card-foot">
 			<button class="button is-success"> <i class=" mr-2 fa-solid fa-pen" />Modifier</button>
-			<button  on:click={toggleWarning} class="button is-danger"><i class=" mr-2 fa-solid fa-trash" /> Supprimer</button>
+			<button on:click={toggleWarning} class="button is-danger"
+				><i class=" mr-2 fa-solid fa-trash" /> Supprimer</button
+			>
 		</footer>
 	</div>
 </div>

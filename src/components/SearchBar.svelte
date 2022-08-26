@@ -7,7 +7,7 @@
 	let message: string = '';
 
 	let toggle = false;
-	let error = 0
+	let error = 0;
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
@@ -16,18 +16,17 @@
 		recherche = '';
 	}
 	const onSubmit = () => {
-		error++
+		error++;
 		if (recherche.length >= 3) {
 			message = '';
-  console.log(error);
-  
-			setTimeout(() => {
-				if ( error === 4) {
+			console.log(error);
 
+			setTimeout(() => {
+				if (error === 4) {
 					toggle = true;
-					dispatch('recherche-user', { txt: "zldslj" });
-					message = "Une erreur est survenue, merci de réessayer.";
-					error = 0
+					dispatch('recherche-user', { txt: 'zldslj' });
+					message = 'Une erreur est survenue, merci de réessayer.';
+					error = 0;
 				} else {
 					dispatch('recherche-user', { txt: recherche });
 				}

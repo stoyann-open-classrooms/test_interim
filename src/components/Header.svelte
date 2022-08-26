@@ -1,55 +1,54 @@
 <script lang="ts">
-  import logo from '../assets/parteners_interim_logo.png'
-
+	import logo from '../assets/parteners_interim_logo.png';
 </script>
-<header class='has-navbar-fixed-top p-2 mb-4 '>
-    <nav class="navbar"  aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <img class="logo" src={logo} alt="">
-            </a>
 
-            <button class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-          </button>
-        </div>
+<header class="has-navbar-fixed-top p-2 mb-4 ">
+	<nav class="navbar" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="/">
+				<img class="logo" src={logo} alt="" />
+			</a>
 
-        <div class="navbar-menu  ">
-            <div class="navbar-start">
-                <a class="navbar-item" href="/">
-                    <i class=" mr-2 fa-solid fa-magnifying-glass"></i>Recherche
-                </a>
+			<button
+				class="navbar-burger"
+				aria-label="menu"
+				aria-expanded="false"
+				data-target="navbarBasicExample"
+			>
+				<span aria-hidden="true" />
+				<span aria-hidden="true" />
+				<span aria-hidden="true" />
+			</button>
+		</div>
 
-                <a class="navbar-item" href="/add-user">
-                    <i  class=" mr-2 fa fa-plus"></i>  Ajouter un uttilisateur
-                </a>
+		<div class="navbar-menu  ">
+			<div class="navbar-start">
+				<a class="navbar-item" href="/">
+					<i class=" mr-2 fa-solid fa-magnifying-glass" />Recherche
+				</a>
 
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="/help">
-                        Aide
-                    </a>
+				<a class="navbar-item" href="/add-user">
+					<i class=" mr-2 fa fa-plus" /> Ajouter un uttilisateur
+				</a>
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/documentation">
-                            <i class=" mr-2 fa fa-book"></i> Documentation
-                        </a>
-        
-                        <a class="navbar-item" href="/about" >
-                            <i class=" mr-2 fa-solid fa-comment-dots"></i> A propos
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item" href="/bug-report">
-                            <i class=" mr-2 fa  fa-bug"></i>  Signaler un problème
-                        </a>
-                    </div>
-                </div>
-            </div>
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link" href="/help"> Aide </a>
 
-            
-          
-        </div>
-    </nav>
+					<div class="navbar-dropdown">
+						<a class="navbar-item" href="/documentation">
+							<i class=" mr-2 fa fa-book" /> Documentation
+						</a>
+
+						<a class="navbar-item" href="/about">
+							<i class=" mr-2 fa-solid fa-comment-dots" /> A propos
+						</a>
+						<hr class="navbar-divider" />
+						<a class="navbar-item" href="/bug-report">
+							<i class=" mr-2 fa  fa-bug" /> Signaler un problème
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 </header>

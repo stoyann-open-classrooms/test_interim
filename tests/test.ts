@@ -7,3 +7,7 @@ test('index page has expected h1', async ({ page }) => {
 
 
 // TODO = tester le formatage du nom et prenom
+// doc PlayWrite https://playwright.dev/docs/selectors
+// Lancer les tests : npx playwright test
+
+

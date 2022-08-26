@@ -1,10 +1,9 @@
 <script lang="ts">
-import UserCard from "./UserCard.svelte";
-
+	import UserCard from './UserCard.svelte';
 
 	export /**
 	 * @type {{  firstName: string; lastName: string; id: number;  }}
-	 */ let item:any;
+	 */ let item: any;
 	/**
 
 
@@ -17,7 +16,7 @@ import UserCard from "./UserCard.svelte";
 	 *
 	 * @returns formated name
 	 */
-     function formateName(firstName:string, lastName: string): string {
+	function formateName(firstName: string, lastName: string): string {
 		let last = lastName.toUpperCase();
 		let first = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 		let formatedName = `${first + ' ' + last}`;
@@ -26,12 +25,10 @@ import UserCard from "./UserCard.svelte";
 </script>
 
 <tr>
-	
-	<td><img src={item.image} alt=""></td>
-	<td>{formateName(item.firstName , item.lastName)}</td>
+	<td><img src={item.image} alt="" /></td>
+	<td>{formateName(item.firstName, item.lastName)}</td>
 	<td>{item.phone}</td>
 	<td>
-		<UserCard {item}/>
+		<UserCard {item} />
 	</td>
-
 </tr>
