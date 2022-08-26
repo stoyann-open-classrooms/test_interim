@@ -4,6 +4,7 @@
 	import SearchBar from '../components/Home/SearchBar.svelte';
 	import '../app.scss';
 	import Spinner from '../components/shared/Spinner.svelte';
+
 	let txt: string;
 	let users: any[] | undefined = [];
 

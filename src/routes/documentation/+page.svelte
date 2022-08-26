@@ -1,7 +1,21 @@
-<script></script>
+<script lang="ts">
+	import storeData from '../../store/store';
+
+	/**
+	 * @type {unknown}
+	 */
+	let test;
+	// inscription au store
+
+	storeData.subscribe((value) => {
+		test = value;
+	});
+	console.log(test);
+</script>
 
 <main class="container p-5">
 	<h1 class="title is-3 is-center">Documentation</h1>
+
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum obcaecati rerum voluptatum quia
 		molestias, porro laborum odio id iusto quidem dignissimos, quasi totam nesciunt. Consequatur,

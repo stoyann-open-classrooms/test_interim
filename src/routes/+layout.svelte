@@ -4,6 +4,8 @@
 	import '../app.scss';
 </script>
 
+<!-- doc : https://kit.svelte.dev/docs/routing#page -->
+
 <Header />
 <slot />
 
