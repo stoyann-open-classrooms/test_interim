@@ -1,7 +1,7 @@
 <script lang="ts">
-	import UserList from './../components/UserList.svelte';
+	import UserList from '../components/Home/UserList.svelte';
 
-	import SearchBar from '../components/SearchBar.svelte';
+	import SearchBar from '../components/Home/SearchBar.svelte';
 	import '../app.scss';
 	import Spinner from '../components/shared/Spinner.svelte';
 	let txt: string;
@@ -29,6 +29,7 @@
 </script>
 
 <main class="container p-5">
+	<h1 class="title is-4">Rechercher un utilisateur</h1>
 	<SearchBar on:recherche-user={goRecherche} />
 
 	{#if !users}

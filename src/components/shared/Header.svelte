@@ -28,11 +28,11 @@
 				</a>
 
 				<a class="navbar-item" href="/add-user" sveltekit:prefetch>
-					<i class=" mr-2 fa fa-plus" /> Ajouter un uttilisateur
+					<i class=" mr-2 fa fa-plus" /> Ajouter un utilisateur
 				</a>
 
 				<div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link" href="/help"> Aide </a>
+					<a class="navbar-link" href="/"> Aide </a>
 
 					<div class="navbar-dropdown">
 						<a class="navbar-item" href="/documentation">
