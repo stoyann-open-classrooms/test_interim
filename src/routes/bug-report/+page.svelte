@@ -2,14 +2,13 @@
 
 <main class="container p-5">
 	<h1 class="title is-3 is-center">Signaler un problème.</h1>
-	<p>
+	<p class="mb-6">
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum commodi excepturi corporis nisi id
-		sint voluptatibus? Optio, error? Tenetur ullam itaque minima deleniti dolores ipsum modi
-		reprehenderit sed neque et dolor laborum vitae numquam autem similique, porro iste? Excepturi
-		minus nesciunt culpa unde aut ratione corrupti deserunt ipsa? Doloribus delectus dicta minus
-		modi voluptatibus nihil, officiis omnis, nemo excepturi velit amet ullam perspiciatis labore
-		reiciendis quasi harum cumque, provident error. Placeat nulla beatae delectus nostrum quam
-		corporis voluptas in aliquid vel, impedit, inventore voluptatibus sed minima? Ratione facilis
-		quaerat officia molestias saepe? Illo cumque a adipisci ut! Omnis, mollitia veritatis.
+		sint voluptatibus? Optio, error?
 	</p>
+	<textarea class="textarea" placeholder="10 lines of textarea" rows="8" />
+	<div class="container mt-4">
+		<button class="button is-success">Envoyer</button>
+		<button class="button is-danger">Annuler</button>
+	</div>
 </main>

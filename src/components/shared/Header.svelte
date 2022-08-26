@@ -2,7 +2,7 @@
 	import logo from '../../assets/parteners_interim_logo.png';
 </script>
 
-<header class="has-navbar-fixed-top p-2 mb-4 ">
+<header class="has-navbar fixed-top p-2 mb-4 ">
 	<nav class="navbar" aria-label="main navigation">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="/">

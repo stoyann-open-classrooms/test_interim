@@ -19,6 +19,7 @@
 	function goRecherche(event: { detail: { txt: any } }) {
 		let url = `https://dummyjson.com/users/search?q=${event.detail.txt}`;
 		console.log(url);
+		users = [];
 		fetch(url)
 			.then((response) => response.json())
 			.then(function (data) {
