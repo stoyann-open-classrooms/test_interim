@@ -38,9 +38,7 @@
 	<div on:click={toggleClass} class="modal-background" />
 	<div class="modal-card">
 		<button on:click={toggleClass} class="delete" aria-label="close" />
-		<header class="modal-card-head">
-			<h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
-		</header>
+		<header class="modal-card-head" />
 		<section class="modal-card-body">
 			{#if warning}
 				<div class="notification is-warning">
@@ -58,41 +56,36 @@
 			{/if}
 
 			<!-- Content ... -->
-			<div class="top">
+			<div class=" box top">
 				<figure class="image is-110x110">
 					<img src={item.image} alt="" />
 				</figure>
 				<div class="contact ">
-					<p class="title is-5 m-2"><i class=" mr-4 fa-solid fa-phone" /> {item.phone}</p>
-					<p class="title is-5"><i class=" mr-4 fa-solid fa-envelope" /> {item.email}</p>
+					<h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
 				</div>
 			</div>
-			<div class="content m-5">
-				<div class="name mb-5">
+			<div class="box ">
+				<div class="box mb-5">
 					<div class="title is-6">
-						Nom: <span class=" tag is-dark is-medium">{item.lastName}</span>
+						E-mail: {item.email}
 					</div>
-					<div class="title is-6">
-						Prénom: <span class=" tag is-dark is-medium">{item.firstName}</span>
-					</div>
-				</div>
-				<div class="info mb-5">
 					<div class="title is-6 m-1 ">
-						Date de naissance: <span class=" tag is-dark is-medium"
-							>{new Date(item.birthDate).toLocaleDateString()}</span
-						>
+						Date de naissance:
+						{new Date(item.birthDate).toLocaleDateString()}
 					</div>
-					<div class="title is-6 m-1">
-						Sexe: <span class=" tag is-dark is-medium">{item.gender.slice(0, 1).toUpperCase()}</span
-						>
+					<div class="info mb-5">
+						<div class="title is-6 m-1">
+							Sexe:
+							{item.gender.slice(0, 1).toUpperCase()}
+						</div>
 					</div>
-				</div>
-				<div class="info mb-5">
-					<div class="title is-6 m-1">
-						SSN: <span class="tag is-dark is-medium">{item.ssn}</span>
-					</div>
-					<div class="title is-6 m-1">
-						IBAN: <span class=" tag is-dark is-medium">{item.bank.iban}</span>
+					<div class="info mb-5">
+						<div class="title is-6 m-1">
+							SSN: {item.ssn}
+						</div>
+						<div class="title is-6 m-1">
+							IBAN: {item.bank.iban}
+						</div>
 					</div>
 				</div>
 			</div>

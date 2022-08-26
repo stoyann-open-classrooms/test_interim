@@ -1,4 +1,4 @@
-<footer class="footer fixed-botom">
+<footer class="footer fixed-bottom">
 	<div class="content has-text-centered">
 		<div class="m-3">
 			<a class="m-4" href="/about"> <i class=" mr-2 fa-solid fa-comment-dots" /> A propos</a>

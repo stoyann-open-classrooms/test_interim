@@ -6,7 +6,12 @@
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum commodi excepturi corporis nisi id
 		sint voluptatibus? Optio, error?
 	</p>
-	<textarea class="textarea" placeholder="10 lines of textarea" rows="8" />
+	<textarea
+		class="textarea"
+		placeholder="Indiquez votre problème ici
+    "
+		rows="8"
+	/>
 	<div class="container mt-4">
 		<button class="button is-success">Envoyer</button>
 		<button class="button is-danger">Annuler</button>
