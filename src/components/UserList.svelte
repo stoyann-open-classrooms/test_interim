@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Spinner from './Spinner.svelte';
+	import Spinner from './shared/Spinner.svelte';
 
 	import UserLigne from './UserLigne.svelte';
 	export let users: any[] = [];

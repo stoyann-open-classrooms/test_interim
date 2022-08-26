@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '../assets/parteners_interim_logo.png';
+	import logo from '../../assets/parteners_interim_logo.png';
 </script>
 
 <header class="has-navbar-fixed-top p-2 mb-4 ">
@@ -27,7 +27,7 @@
 					<i class=" mr-2 fa-solid fa-magnifying-glass" />Recherche
 				</a>
 
-				<a class="navbar-item" href="/add-user">
+				<a class="navbar-item" href="/add-user" sveltekit:prefetch>
 					<i class=" mr-2 fa fa-plus" /> Ajouter un uttilisateur
 				</a>
 

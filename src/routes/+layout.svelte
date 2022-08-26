@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Header from '../components/shared/Header.svelte';
+	import Footer from '../components/shared/Footer.svelte';
+	import '../app.scss';
 </script>
 
-<div class=" m-8 container">
-	<Header />
-	<slot />
-	<Footer />
-</div>
+<Header />
+<slot />
+
+<Footer />

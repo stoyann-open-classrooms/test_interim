@@ -1,12 +1,9 @@
 <script lang="ts">
 	import UserList from './../components/UserList.svelte';
-	import Spinner from './../components/Spinner.svelte';
 
 	import SearchBar from '../components/SearchBar.svelte';
-	// 	  import UserList from '../components/UserList.svelte';
 	import '../app.scss';
-	// import Spinner from 'src/components/Spinner.svelte';
-
+	import Spinner from '../components/shared/Spinner.svelte';
 	let txt: string;
 	let users: any[] | undefined = [];
 

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import Spinner from './Spinner.svelte';
 
 	const dispatch = createEventDispatcher();
 	let recherche: string = '';

@@ -1,5 +1,5 @@
 <script>
-	import spiner from '../assets/spinner.gif';
+	import spiner from '../../assets/spinner.gif';
 </script>
 
 <div class="spinner-container">
