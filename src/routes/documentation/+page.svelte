@@ -1,16 +1,6 @@
 <script lang="ts">
-	import storeData from '../../store/store';
-
-	/**
-	 * @type {unknown}
-	 */
-	let test;
-	// inscription au store
-
-	storeData.subscribe((value) => {
-		test = value;
-	});
-	console.log(test);
+	import { users } from '../../stores/usersStore';
+	console.log($users);
 </script>
 
 <main class="container p-5">
