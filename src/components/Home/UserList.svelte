@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Spinner from '../shared/Spinner.svelte';
-	import userData from '../../stores/usersStore';
 	import UserLigne from './UserLigne.svelte';
+	import userData from '../../stores/usersStore';
 	let data: string | any[];
 	userData.subscribe((usr) => {
 		data = usr;

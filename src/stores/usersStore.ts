@@ -1,4 +1,4 @@
-import { writable } from "svelte/store"
+import { writable } from 'svelte/store';
 
 // export const users = writable([])
 
@@ -11,35 +11,36 @@ import { writable } from "svelte/store"
 //   users.set(data.users)
 // }
 
-
 // // TODO = get searchTerm variable from searchBarComponent
 
 //  setTimeout(() => fetchUsers(''), 2000);
 
-
 // =========================================
 
+function customUserStore() {
+	const users = writable([]);
 
-function customUserStore(){
-    const users = writable([]);
-    
-const fetchUsers = async (searchTerm: string) => {
+	const fetchUsers = async (searchTerm: string) => {
+		const url = `https://dummyjson.com/users/search?q=${searchTerm}`;
+		const res = fetch(url);
+		const data = await (await res).json();
 
-    const url = `https://dummyjson.com/users/search?q=${searchTerm}`
-    const res = fetch(url)
-    const data = await (await res).json()
+		users.set(data.users);
+	};
+	fetchUsers('');
+	setTimeout(() => fetchUsers(''), 2000);
     
-      users.set(data.users)
-    }
-    fetchUsers('')
-    
-    return {
-        subscribe : users.subscribe,
-        search : (searchTerm: string) => {
- setTimeout(() => fetchUsers(searchTerm), 2000);
-                    
-        }
-    }
+	return {
+        subscribe: users.subscribe,
+        
+		search: (searchTerm: string) => {
+            
+            if (searchTerm.length >= 3) {
+				setTimeout(() => fetchUsers(searchTerm), 2000);
+			}
+		},
+		reset: () => users.set([])
+	};
 }
 
-export default customUserStore()
+export default customUserStore();

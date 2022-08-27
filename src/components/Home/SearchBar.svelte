@@ -1,16 +1,12 @@
 <script lang="ts">
 	import userData from '../../stores/usersStore';
+
 	let data: string | any[];
-
 	let message: string = '';
-
 	let toggle = false;
 	let error = 0;
 	let searchTerm = '';
-	// TODO = make this variable accesible to the  user store
-	$: {
-		console.log(searchTerm);
-	}
+
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
@@ -18,25 +14,24 @@
 	}
 	function clear() {
 		searchTerm = '';
+		if (toggle === true) {
+			toggle = false;
+		}
+		// TODO = return list of all users
 	}
 	const onSubmit = () => {
 		error++;
-		if (searchTerm.length >= 3) {
-			message = '';
-			console.log(error);
-
-			if (error >= 4) {
-				toggle = true;
-				// dispatch('recherche-user', { txt: 'zldslj' });
-				message = 'Une erreur est survenue, merci de réessayer.';
-				error = 0;
-			} else {
-				userData.search(searchTerm);
-			}
-		} else {
+		userData.search(searchTerm);
+		if (searchTerm.length < 3) {
 			toggle = true;
-			message = "Votre recherche doit être composée d'un minimum de 3 caractères.";
+			message = 'Votre recherche doit contenir un minimum de 3 caractères';
 		}
+		if (error >= 4) {
+			toggle = true;
+			message = 'Une erreur est survenue, merci de réessayer';
+		}
+		userData.reset();
+		userData.search(searchTerm);
 	};
 </script>
 
