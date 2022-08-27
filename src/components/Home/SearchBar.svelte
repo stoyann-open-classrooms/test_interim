@@ -1,22 +1,27 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-
+	import { users } from '../../stores/usersStore';
 	const dispatch = createEventDispatcher();
-	let recherche: string = '';
+
 	let message: string = '';
 
 	let toggle = false;
 	let error = 0;
+	let searchTerm = '';
+	// TODO = make this variable accesible to the  user store
+	$: {
+		console.log(searchTerm);
+	}
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
 	}
 	function clear() {
-		recherche = '';
+		searchTerm = '';
 	}
 	const onSubmit = () => {
 		error++;
-		if (recherche.length >= 3) {
+		if (searchTerm.length >= 3) {
 			message = '';
 			console.log(error);
 
@@ -27,7 +32,8 @@
 					message = 'Une erreur est survenue, merci de réessayer.';
 					error = 0;
 				} else {
-					dispatch('recherche-user', { txt: recherche });
+					// $users;
+					// dispatch('recherche-user', { txt: searchTerm });
 				}
 			}, 2000);
 		} else {
@@ -46,11 +52,16 @@
 	</div>
 	<div class="field">
 		<p class="control has-icons-left has-icons-right ">
-			<input bind:value={recherche} class="input is-rounded " type="text" placeholder="Recherche" />
+			<input
+				bind:value={searchTerm}
+				class="input is-rounded "
+				type="text"
+				placeholder="Recherche"
+			/>
 			<span class="icon is-small is-left">
 				<i class="fa-solid fa-magnifying-glass" />
 			</span>
-			{#if recherche.length > 0}
+			{#if searchTerm.length > 0}
 				<span class="icon is-small is-right">
 					<button on:focus={clear} class="delete">
 						<i class="fa-solid fa-xmark" />
