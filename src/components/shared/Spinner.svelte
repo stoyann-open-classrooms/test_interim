@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import spiner from '../../assets/spinner.gif';
 </script>
 

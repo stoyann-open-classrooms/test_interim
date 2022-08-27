@@ -1,3 +1,7 @@
+<script lang="ts">
+	// your script goes here
+</script>
+
 <footer class="footer fixed-bottom">
 	<div class="content has-text-centered">
 		<div class="m-3">
