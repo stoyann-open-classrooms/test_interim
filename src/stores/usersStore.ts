@@ -3,6 +3,7 @@ import { writable } from "svelte/store"
 export const users = writable([])
 
 const fetchUsers = async (searchTerm: string) => {
+    
 const url = `https://dummyjson.com/users/search?q=${searchTerm}`
 const res = fetch(url)
 const data = await (await res).json()

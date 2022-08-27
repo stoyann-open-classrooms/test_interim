@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { users } from '../../stores/usersStore';
-	console.log($users);
 </script>
 
 <main class="container p-5">
