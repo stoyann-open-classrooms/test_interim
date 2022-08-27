@@ -1,11 +1,14 @@
 <script lang="ts">
 	import userData from '../../stores/usersStore';
+	import Spinner from '../shared/Spinner.svelte';
 
-	let data: string | any[];
 	let message: string = '';
 	let toggle = false;
 	let error = 0;
 	let searchTerm = '';
+	userData.subscribe((val) => {
+		console.log(val);
+	});
 
 	// open /close modal
 	function toggleClass() {
@@ -14,6 +17,7 @@
 	}
 	function clear() {
 		searchTerm = '';
+
 		if (toggle === true) {
 			toggle = false;
 		}
@@ -22,19 +26,22 @@
 	const onSubmit = () => {
 		error++;
 		userData.search(searchTerm);
-		if (searchTerm.length < 3) {
-			toggle = true;
-			message = 'Votre recherche doit contenir un minimum de 3 caractères';
-		}
 		if (error >= 4) {
 			toggle = true;
 			message = 'Une erreur est survenue, merci de réessayer';
 		}
-		userData.reset();
+		if (searchTerm.length < 3) {
+			toggle = true;
+			message = 'Votre recherche doit contenir un minimum de 3 caractères';
+		}
+
 		userData.search(searchTerm);
 	};
 </script>
 
+{#if toggle || !userData}
+	<Spinner />
+{/if}
 <form on:submit|preventDefault={onSubmit}>
 	<div class=" {toggle ? 'notification  is-danger p-2 mb-5  ' : ''}">
 		{#if toggle}
