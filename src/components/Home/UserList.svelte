@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Spinner from '../shared/Spinner.svelte';
-	import { users } from '../../stores/usersStore';
+	import userData from '../../stores/usersStore';
 	import UserLigne from './UserLigne.svelte';
-	let userData: string | any[];
-	users.subscribe((usr) => {
-		userData = usr;
+	let data: string | any[];
+	userData.subscribe((usr) => {
+		data = usr;
 	});
 </script>
 
@@ -18,10 +18,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#if userData.length === 0}
+		{#if data.length === 0}
 			<Spinner />
 		{/if}
-		{#each userData as user (user.id)}
+		{#each data as user (user.id)}
 			<UserLigne item={user} />
 		{/each}
 	</tbody>

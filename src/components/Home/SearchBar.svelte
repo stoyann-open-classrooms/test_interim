@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import { users } from '../../stores/usersStore';
-	const dispatch = createEventDispatcher();
+	import userData from '../../stores/usersStore';
+	let data: string | any[];
 
 	let message: string = '';
 
@@ -15,6 +14,7 @@
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
+		searchTerm = '';
 	}
 	function clear() {
 		searchTerm = '';
@@ -25,17 +25,14 @@
 			message = '';
 			console.log(error);
 
-			setTimeout(() => {
-				if (error === 4) {
-					toggle = true;
-					dispatch('recherche-user', { txt: 'zldslj' });
-					message = 'Une erreur est survenue, merci de réessayer.';
-					error = 0;
-				} else {
-					// $users;
-					// dispatch('recherche-user', { txt: searchTerm });
-				}
-			}, 2000);
+			if (error >= 4) {
+				toggle = true;
+				// dispatch('recherche-user', { txt: 'zldslj' });
+				message = 'Une erreur est survenue, merci de réessayer.';
+				error = 0;
+			} else {
+				userData.search(searchTerm);
+			}
 		} else {
 			toggle = true;
 			message = "Votre recherche doit être composée d'un minimum de 3 caractères.";
