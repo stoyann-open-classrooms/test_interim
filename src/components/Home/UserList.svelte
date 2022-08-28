@@ -6,6 +6,13 @@
 	userData.subscribe((usr) => {
 		data = usr;
 	});
+	import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+	onMount(() => {
+		console.log('On mount !');
+	});
+	onDestroy(() => {
+		console.log('On destroy !');
+	});
 </script>
 
 <table class="table is-bordered is-fullwidth mb-4 mt-5">

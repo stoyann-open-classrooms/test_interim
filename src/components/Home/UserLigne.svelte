@@ -25,7 +25,7 @@
 
 <tr>
 	<td><img src={item.image} alt="" /></td>
-	<td class="nameFormat">{formateName('Stoyann', item.lastName)}</td>
+	<td class="nameFormat">{formateName(item.firstName, item.lastName)}</td>
 	<td>{item.phone}</td>
 	<td>
 		<UserCard {item} />

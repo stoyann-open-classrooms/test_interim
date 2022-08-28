@@ -9,12 +9,13 @@ function customUserStore() {
 
 		users.set(data.users);
 	};
-	fetchUsers('');
+	
 	setTimeout(() => fetchUsers(''), 2000);
 
 	return {
 		subscribe: users.subscribe,
 		search: (searchTerm: string) => {
+			users.set([])
 			if (searchTerm.length >= 3) {
 				setTimeout(() => fetchUsers(searchTerm), 2000);
 			}
