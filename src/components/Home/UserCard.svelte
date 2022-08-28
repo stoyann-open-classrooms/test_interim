@@ -3,12 +3,12 @@
 	 * @type {{  firstName: string; lastName: string; id: number;  }}
 	 */ let item: any;
 
-	let toggle = false;
+	let toggleModal = false;
 	let warning = false;
 
 	// open /close modal
-	function toggleClass() {
-		toggle = !toggle;
+	function setToggleModal() {
+		toggleModal = !toggleModal;
 	}
 	function toggleWarning() {
 		warning = !warning;
@@ -30,14 +30,14 @@
 	}
 </script>
 
-<button on:click={toggleClass} class=" btnModal button is-white is-small"
+<button on:click={setToggleModal} class=" btnModal button is-white is-small"
 	><i class="fa-solid fa-ellipsis" /></button
 >
 
-<div class="modal p-5 {toggle ? 'is-active' : ' '} ">
-	<div on:click={toggleClass} class="modal-background" />
+<div class="modal p-5 {toggleModal ? 'is-active' : ' '} ">
+	<div on:click={setToggleModal} class="modal-background" />
 	<div class="modal-card">
-		<button on:click={toggleClass} class="delete" aria-label="close" />
+		<button on:click={setToggleModal} class="delete" aria-label="close" />
 		<header class="modal-card-head" />
 		<section class="modal-card-body">
 			{#if warning}

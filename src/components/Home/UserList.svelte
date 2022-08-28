@@ -6,12 +6,9 @@
 	userData.subscribe((usr) => {
 		data = usr;
 	});
-	import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+	import { onMount } from 'svelte';
 	onMount(() => {
-		console.log('On mount !');
-	});
-	onDestroy(() => {
-		console.log('On destroy !');
+		userData.setUsers();
 	});
 </script>
 
@@ -25,7 +22,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		{#if data.length === 0}
+		{#if data.length === 0 || !data}
 			<Spinner />
 		{/if}
 		{#each data as user (user.id)}

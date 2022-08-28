@@ -10,10 +10,10 @@
 
 	function clickOutside(element: HTMLInputElement, callbackFunction: { (): void; (): void }) {
 		function onClick(event) {
-			if (searchTerm.length >= 3) {
-				if (!element.contains(event.target)) {
-					callbackFunction();
-				}
+			console.log(element.value);
+
+			if (!element.contains(event.target) && element.value != '') {
+				callbackFunction();
 			}
 		}
 
@@ -28,48 +28,45 @@
 			}
 		};
 	}
-	let count = 0;
-
-	userData.subscribe((val) => {
-		console.log(val);
-		count = val.length;
-	});
 
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
 		searchTerm = '';
+
+		location.reload();
 	}
 	function clear() {
 		searchTerm = '';
 		if (toggle === true) {
 			toggle = false;
 		}
+		location.reload();
+		userData.setUsers();
 	}
 	const onSubmit = () => {
 		error++;
-		userData.search(searchTerm);
-		if (error >= 4) {
-			userData.reset();
+		console.log(error);
+
+		if (error === 8) {
 			toggle = true;
 			message = 'Une erreur est survenue, merci de réessayer';
+			return error;
 		}
-
 		if (searchTerm.length < 3) {
-			userData.reset();
-
+			error++;
 			toggle = true;
 			message = 'Votre recherche doit contenir un minimum de 3 caractères';
 		}
 
+		// userData.search(searchTerm);
 		userData.search(searchTerm);
 	};
 </script>
 
-{#if toggle || count === 0}
+{#if error === 8}
 	<Spinner />
 {/if}
-
 <form on:submit|preventDefault={onSubmit}>
 	<div class=" {toggle ? 'notification  is-danger p-2 mb-5  ' : ''}">
 		{#if toggle}

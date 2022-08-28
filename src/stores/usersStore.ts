@@ -1,24 +1,29 @@
 import { writable } from 'svelte/store';
 
+const users = writable([]);
 function customUserStore() {
-	const users = writable([]);
 	const fetchUsers = async (searchTerm: string) => {
 		const url = `https://dummyjson.com/users/search?q=${searchTerm}`;
 		const res = fetch(url);
 		const data = await (await res).json();
-
-		users.set(data.users);
+        users.set(data.users);
 	};
-	
-	setTimeout(() => fetchUsers(''), 2000);
 
 	return {
 		subscribe: users.subscribe,
-		search: (searchTerm: string) => {
-			users.set([])
+		setUsers: () => {
+			
+			setTimeout(() => fetchUsers(''), 2000);
+		},
+		search: (searchTerm: string  ) => {
+			users.set([]);
+			
+			
 			if (searchTerm.length >= 3) {
 				setTimeout(() => fetchUsers(searchTerm), 2000);
 			}
+			
+			
 		},
 		reset: () => users.set([])
 	};
