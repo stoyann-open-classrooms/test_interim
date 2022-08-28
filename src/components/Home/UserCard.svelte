@@ -30,7 +30,7 @@
 	}
 </script>
 
-<button on:click={toggleClass} class="button is-white is-small"
+<button on:click={toggleClass} class=" btnModal button is-white is-small"
 	><i class="fa-solid fa-ellipsis" /></button
 >
 
@@ -61,7 +61,9 @@
 					<img src={item.image} alt="" />
 				</figure>
 				<div class="contact ">
-					<h3 class="title is-2 p-3">{formateName(item.firstName, item.lastName)}</h3>
+					<h3 id="card-name" class="title is-2 p-3">
+						{formateName(item.firstName, item.lastName)}
+					</h3>
 				</div>
 			</div>
 			<div class="box ">

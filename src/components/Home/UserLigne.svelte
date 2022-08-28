@@ -6,7 +6,6 @@
 	 */ let item: any;
 	/**
 
-
      
 	/**
 	 * formate name
@@ -26,7 +25,7 @@
 
 <tr>
 	<td><img src={item.image} alt="" /></td>
-	<td>{formateName(item.firstName, item.lastName)}</td>
+	<td class="nameFormat">{formateName('Stoyann', item.lastName)}</td>
 	<td>{item.phone}</td>
 	<td>
 		<UserCard {item} />
