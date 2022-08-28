@@ -15,7 +15,7 @@
 	 *
 	 * @returns formated name
 	 */
-	function formateName(firstName: string, lastName: string): string {
+	function formateName(lastName: string, firstName: string): string {
 		let last = lastName.toUpperCase();
 		let first = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 		let formatedName = `${first + ' ' + last}`;
@@ -25,7 +25,7 @@
 
 <tr>
 	<td><img src={item.image} alt="" /></td>
-	<td class="nameFormat">{formateName(item.firstName, item.lastName)}</td>
+	<td class="nameFormat">{formateName(item.lastName, item.firstName)}</td>
 	<td>{item.phone}</td>
 	<td>
 		<UserCard {item} />

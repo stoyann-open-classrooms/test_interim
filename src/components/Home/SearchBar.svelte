@@ -33,8 +33,6 @@
 	function toggleClass() {
 		toggle = !toggle;
 		searchTerm = '';
-
-		location.reload();
 	}
 	function clear() {
 		searchTerm = '';
@@ -48,18 +46,17 @@
 		error++;
 		console.log(error);
 
-		if (error === 8) {
+		if (error >= 4) {
 			toggle = true;
 			message = 'Une erreur est survenue, merci de réessayer';
 			return error;
 		}
 		if (searchTerm.length < 3) {
-			error++;
 			toggle = true;
 			message = 'Votre recherche doit contenir un minimum de 3 caractères';
+			userData.setUsers();
 		}
 
-		// userData.search(searchTerm);
 		userData.search(searchTerm);
 	};
 </script>

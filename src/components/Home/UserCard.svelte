@@ -22,7 +22,7 @@
 	 *
 	 * @returns formated name
 	 */
-	function formateName(firstName: string, lastName: string): string {
+	function formateName(lastName: string, firstName: string): string {
 		let last = lastName.toUpperCase();
 		let first = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 		let formatName = `${first + ' ' + last}`;
@@ -62,7 +62,7 @@
 				</figure>
 				<div class="contact ">
 					<h3 id="card-name" class="title is-2 p-3">
-						{formateName(item.firstName, item.lastName)}
+						{formateName(item.lastName, item.firstName)}
 					</h3>
 				</div>
 			</div>
