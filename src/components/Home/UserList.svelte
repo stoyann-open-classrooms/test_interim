@@ -2,11 +2,13 @@
 	import Spinner from '../shared/Spinner.svelte';
 	import UserLigne from './UserLigne.svelte';
 	import userData from '../../stores/usersStore';
+	import { onMount } from 'svelte';
 	let data: string | any[];
+	// subscribe to userStore
 	userData.subscribe((usr) => {
 		data = usr;
 	});
-	import { onMount } from 'svelte';
+
 	onMount(() => {
 		userData.setUsers();
 	});
@@ -16,8 +18,8 @@
 	<thead>
 		<tr>
 			<th />
-			<th>Nom</th>
-			<th>Télèphone</th>
+			<th> <i class="fa-solid fa-user mr-3" /> Nom</th>
+			<th> <i class="fa-solid fa-phone mr-3" /> Télèphone</th>
 			<th>Action</th>
 		</tr>
 	</thead>

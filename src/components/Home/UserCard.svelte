@@ -37,64 +37,62 @@
 <div class="modal p-5 {toggleModal ? 'is-active' : ' '} ">
 	<div on:click={setToggleModal} class="modal-background" />
 	<div class="modal-card">
-		<button on:click={setToggleModal} class="delete" aria-label="close" />
-		<header class="modal-card-head" />
+		<header class="modal-card-head">
+			<button on:click={setToggleModal} class="delete close-modal" aria-label="close" />
+			<figure class="image is-64x64">
+				<img src={item.image} alt="" />
+			</figure>
+			<h3 class="title is-3">{formateName(item.firstName, item.lastName)}</h3>
+		</header>
 		<section class="modal-card-body">
+			<!-- Content ... -->
+
+			<div class="column">
+				<div>E-mail</div>
+				<i class="fa-solid fa-envelope" />
+				<p>{item.email}</p>
+			</div>
+			<div class="column">
+				<div>Télèphone</div>
+				<i class="fa-solid fa-phone" />
+				<p>{item.phone}</p>
+			</div>
+			<div class="column">
+				<div>Date de naissance</div>
+				<i class="fa-solid fa-cake-candles" />
+				<p>{new Date(item.birthDate).toLocaleDateString()}</p>
+			</div>
+			<div class="column">
+				<i class="fa-solid fa-money-check" />
+				<div>IBAN</div>
+				<p>{item.bank.iban}</p>
+			</div>
+			<div class="column">
+				<i class="fa-solid fa-briefcase-medical" />
+				<div>SSN</div>
+				<p>{item.ssn}</p>
+			</div>
+
 			{#if warning}
-				<div class="notification is-warning">
+				<div class="notification is-warning  ">
 					<p>
 						Vous êtes sur le point de supprimer l'utilisateur <strong>
 							{formateName(item.firstName, item.lastName)}.
 						</strong>
 						Cette action est irréversible, êtes-vous certain de vouloir continuer ?
 					</p>
-					<div class="mt-3">
-						<button class="button is-danger is-small mr-3">Supprimer</button>
+					<div class="mt-6">
+						<button class="button is-danger is-small mr-3">Continuer</button>
 						<button on:click={toggleWarning} class="button is-success is-small">Annuler</button>
 					</div>
 				</div>
 			{/if}
-
-			<!-- Content ... -->
-			<div class=" box top">
-				<figure class="image is-110x110">
-					<img src={item.image} alt="" />
-				</figure>
-				<div class="contact ">
-					<h3 id="card-name" class="title is-2 p-3">
-						{formateName(item.lastName, item.firstName)}
-					</h3>
-				</div>
-			</div>
-			<div class="box ">
-				<div class="box mb-5">
-					<div class="title is-6">
-						E-mail: {item.email}
-					</div>
-					<div class="title is-6 m-1 ">
-						Date de naissance:
-						{new Date(item.birthDate).toLocaleDateString()}
-					</div>
-					<div class="info mb-5">
-						<div class="title is-6 m-1">
-							Sexe:
-							{item.gender.slice(0, 1).toUpperCase()}
-						</div>
-					</div>
-					<div class="info mb-5">
-						<div class="title is-6 m-1">
-							SSN: {item.ssn}
-						</div>
-						<div class="title is-6 m-1">
-							IBAN: {item.bank.iban}
-						</div>
-					</div>
-				</div>
-			</div>
 		</section>
 		<footer class="modal-card-foot">
-			<button class="button is-success"> <i class=" mr-2 fa-solid fa-pen" />Modifier</button>
-			<button on:click={toggleWarning} class="button is-danger"
+			<button class="button is-success is-small">
+				<i class=" mr-2 fa-solid fa-pen" />Modifier</button
+			>
+			<button on:click={toggleWarning} class="button is-danger is-small"
 				><i class=" mr-2 fa-solid fa-trash" /> Supprimer</button
 			>
 		</footer>

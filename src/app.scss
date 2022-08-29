@@ -8,14 +8,17 @@
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
-
 main {
-min-height: 90vh;
+	min-height: 100vh;
 }
+
 header {
 	background-color: $secondary-color;
 	color: $light;
-  
+
+	.navbar-menu {
+		background-color: $secondary-color;
+	}
 	.navbar-brand {
 		background-color: $secondary-color;
 		a {
@@ -23,63 +26,110 @@ header {
 		}
 	}
 	.navbar-burger {
-		color:
-         $light-color;
+		color: $light-color;
 	}
 }
+
+
+
+thead tr th {
+    background-color: $secondary-color;
+    border-color: $dark;
+}
+
+.table.is-bordered td, .table.is-bordered th {
+    border-width: 2px;
+  border-color: $light-color;
+
+
+}
+
 
 .footer {
-    background-color: $secondary-color;
-    padding: 2rem;
-    
+	background-color: $secondary-color;
+	padding: 2rem;
+
 	strong {
-        color: $light-color;
+		color: $light-color;
 	}
 }
 
 
-td {
- img{
-    height: 50px;
- }
-}
 
 .top {
-    display: flex;
-    align-items: center;
-    img{
-        height: 150px;
-
-    }
+	display: flex;
+	align-items: center;
+    height: 200px;
+    padding: 0;
+    flex: 1;
+	img {
+		height: 150px;
+	}
 }
 
-
-.spinner-container{
+.spinner-container {
+	position: absolute;
+	top: 30%;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	right: 0;
+	background-color: rgb(255, 255, 255);
+	img {
+		background-color: rgb(255, 255, 255);
+		position: absolute;
+		height: 5rem;
+		top: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+.close-modal{
     position: absolute;
-    top: 30%;
-    bottom: 0;
-    left: 0;
-    z-index: 99999;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    img {
-        background-color: rgb(255, 255, 255);
-        position: absolute;
-        height: 5rem;
-        top: 50%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50% , -50%);
+    right: 2%;
+    top: 10%;
+
+    &:hover{
+        background-color:  $secondary-color;
     }
 }
 
 
-.navbar-menu {
-    background-color: $secondary-color;
+.modal-card {
+    max-width: 450px;
 }
 
+.column{
+    position: relative;
+    i{
+        position: absolute;
+        font-size: 3rem;
+        top: 15%;
+        color: $secondary-color;
+    }
+    background-color: $dark;
+    color: white;
 
-img{
-    object-fit: cover;
+    border-radius: 10px;
+
+    margin: 1rem 0 ;
+    div {
+        color: $secondary-color;
+         text-transform: uppercase;
+         font-weight: bold;
+         padding-left: 5rem;
+         
+    }
+    p{
+        padding-left: 5rem;
+    }
 }
 
+.is-warning{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:-80px;
+}

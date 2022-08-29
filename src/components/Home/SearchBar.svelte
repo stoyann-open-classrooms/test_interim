@@ -1,17 +1,16 @@
 <script lang="ts">
-	import usersStore from '../../stores/usersStore';
-
 	import userData from '../../stores/usersStore';
 	import Spinner from '../shared/Spinner.svelte';
+
 	let message: string = '';
 	let toggle = false;
 	let error = 0;
 	let searchTerm = '';
 
+	// search submit when user click outside the searchbar
 	function clickOutside(element: HTMLInputElement, callbackFunction: { (): void; (): void }) {
 		function onClick(event) {
-			console.log(element.value);
-
+			// console.log(element.value);
 			if (!element.contains(event.target) && element.value != '') {
 				callbackFunction();
 			}
@@ -28,12 +27,13 @@
 			}
 		};
 	}
-
 	// open /close modal
 	function toggleClass() {
 		toggle = !toggle;
 		searchTerm = '';
+		location.reload();
 	}
+	// clear search input
 	function clear() {
 		searchTerm = '';
 		if (toggle === true) {
@@ -42,14 +42,16 @@
 		location.reload();
 		userData.setUsers();
 	}
+	// search submit
 	const onSubmit = () => {
 		error++;
 		console.log(error);
 
-		if (error >= 4) {
+		if (error >= 8) {
 			toggle = true;
 			message = 'Une erreur est survenue, merci de réessayer';
-			return error;
+			searchTerm = 'XXXXXXXX';
+			userData.search(searchTerm);
 		}
 		if (searchTerm.length < 3) {
 			toggle = true;

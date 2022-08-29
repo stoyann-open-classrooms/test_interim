@@ -24,7 +24,11 @@
 </script>
 
 <tr>
-	<td><img src={item.image} alt="" /></td>
+	<td>
+		<figure class="image is-32x32">
+			<img src={item.image} alt="user pics" />
+		</figure>
+	</td>
 	<td class="nameFormat">{formateName(item.lastName, item.firstName)}</td>
 	<td>{item.phone}</td>
 	<td>
