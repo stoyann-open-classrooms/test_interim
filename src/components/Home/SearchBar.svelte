@@ -10,7 +10,7 @@
 	// search submit when user click outside the searchbar
 	function clickOutside(element: HTMLInputElement, callbackFunction: { (): void; (): void }) {
 		function onClick(event) {
-			// console.log(element.value);
+			console.log(event);
 			if (!element.contains(event.target) && element.value != '') {
 				callbackFunction();
 			}
